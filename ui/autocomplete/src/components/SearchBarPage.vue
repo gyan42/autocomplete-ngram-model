@@ -37,7 +37,8 @@
 // Reference: https://codepen.io/alligatorio/pen/mXRGLg
 
 import PageHeader from "@/components/PageHeader"
-import api from "@/backend/api"
+// import api from "@/backend/api"
+import axios from 'axios';
 
 export default {
   name: "HomePage",
@@ -74,13 +75,17 @@ export default {
 
       this.isLoading = true
 
+      var path = process.env.VUE_APP_API_BASE_URL + process.env.VUE_APP_SUGGESTIONS_API
+      console.info("path", path)
       // Backend 
-      api.post(process.env.VUE_APP_SUGGESTIONS_API, {text: cleandedQuery})
+      axios.post(path, {text: cleandedQuery})
       .then((res) => {
         this.isLoading = false
         this.results = res.data.tokens
         console.info("suggestions", this.results)
       })
+
+
       .catch((err) => console.error(err))
       this.isOpen = true
     },

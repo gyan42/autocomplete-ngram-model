@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+
+  api:
+    image: mageswaran1989/autocompleter-api:latest
+    container_name: autocompleter-api
+    restart: always
+    ports:
+      - 8088:8088
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
+      - apparmor:unconfined
+    networks:
+      - ac_docker_network
+
+  web-ui:
+    image: mageswaran1989/autocompleter-ui:latest
+    container_name: autocompleter-ui
+    restart: always
+    depends_on:
+      - api
+    ports:
+      - 8080:80
+    networks:
+      - ac_docker_network
+
+
+networks:
+  ac_docker_network:
+    driver: bridge
+
+volumes:
+  data:
+    name: data
+  pg_data:
+  minio-data:

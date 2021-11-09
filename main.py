@@ -93,6 +93,7 @@ def suggestions(data: Text):
 
     # tokens = filter(lambda s: len(s) > 0, tokens)
 
+    # Add start tokens if numner of tokens are less than trianed ngram 
     if len(tokens) < auto_correct_model._ngram:
         tokens = ['<s>'] * (auto_correct_model._ngram - len(tokens)) + tokens
     
