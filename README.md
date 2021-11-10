@@ -30,7 +30,7 @@ uvicorn main:app --host 0.0.0.0 --port 8088 --reload
 
 ## Colab Notebook
 
-https://colab.research.google.com/gist/Mageswaran1989/3e19b339477cc7acee67e9f1667978bf/autocorrectmodel.ipynb
+https://colab.research.google.com/gist/Mageswaran1989/e49e043f09c1de89c6f433967be118a2/autocorrectmodel.ipynb
 
 ## Docker
 
