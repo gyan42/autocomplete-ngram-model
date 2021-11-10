@@ -2,33 +2,36 @@
  <page-header>
     <h1 class="title">Welcome to AutoCompleter! </h1>
     <h2 class="subtitle">Probability based model that suggests next word</h2>
+    <h3 class="text"> Git: <a href="https://github.com/gyan42/autocomplete-ngram-model">https://github.com/gyan42/autocomplete-ngram-model </a></h2>
  </page-header>
 
 
   <div>
-
       <input class="input is-rounded" 
-        v-model="search" 
-        @input="onChange"
-        @keyup.down="onArrowDown" 
-        @keyup.up="onArrowUp" 
-        @keyup.enter="onEnter"
-        autocomplete="off"
-        placeholder="Enter your text here for auto suggestion..."/>
+          v-model="search" 
+          @input="onChange"
+          @keyup.down="onArrowDown" 
+          @keyup.up="onArrowUp" 
+          @keyup.enter="onEnter"
+          autocomplete="off"
+          placeholder="Enter your text here for auto suggestion..."/>
 
-    <ul id="autocomplete-results" v-show="isOpen" class="autocomplete-results">
-      <li class="loading" v-if="isLoading">
-        Loading Results...
-      </li>
-      <li v-else v-for="(result, i) in results" :key="i" @click="setResult(result)"
-                class="autocomplete-result" :class="{ 'is-active': i === arrowCounter }">
-      {{result}}
-      </li>
-    </ul> 
+      <ul id="autocomplete-results" v-show="isOpen" class="autocomplete-results">
+        <li class="loading" v-if="isLoading">
+          Loading Results...
+        </li>
+        <li v-else v-for="(result, i) in results" :key="i" @click="setResult(result)"
+                  class="autocomplete-result" :class="{ 'is-active': i === arrowCounter }">
+        {{result}}
+        </li>
+      </ul> 
 
-  <br>
-  <br>
-  <p><b>Your search query: {{ search }}</b></p>
+    <br>
+    <br>
+    <p><b>Note: Please press space before selecting the suggestions!</b></p>
+    <br><br>
+    <p><b>Your search query: {{ search }}</b></p>
+
   </div>
 
 </template>
@@ -37,7 +40,6 @@
 // Reference: https://codepen.io/alligatorio/pen/mXRGLg
 
 import PageHeader from "@/components/PageHeader"
-// import api from "@/backend/api"
 import axios from 'axios';
 
 export default {

@@ -1,6 +1,10 @@
 # autocomplete-ngram-model
 NLP Autocomplete N-Gram Model
 
+[http://gyan42-autocompleter.herokuapp.com](http://gyan42-autocompleter.herokuapp.com)
+
+![](screen.png)
+
 ## UI
 
 ```
@@ -33,6 +37,7 @@ https://colab.research.google.com/gist/Mageswaran1989/3e19b339477cc7acee67e9f166
 - https://apple.stackexchange.com/questions/373888/how-do-i-start-the-docker-daemon-on-macos
 
 ```
+# Mac terminal setup
 docker-machine create --driver virtualbox default
 docker-machine restart
 eval "$(docker-machine env default)"
@@ -74,13 +79,13 @@ docker-compose -f ops/docker-compose.yaml up
 docker-compose -f ops/docker-compose-linux.yaml up
 ```
 
-Mac:
+Mac Links on Local machine:
 
 - [API](http://192.168.99.100:8088)
 - [Docs](http://192.168.99.100:8088/docs)
 - [UI](http://192.168.99.100:8080/)
 
-Linux: 
+Linux Links on Local Machine: 
 - [API](http://0.0.0.0:8088)
 - [Docs](http://0.0.0.0:8088/docs)
 - [UI](http://localhost:8080/)
@@ -113,14 +118,15 @@ docker exec fastapi-vue cat ../etc/nginx/conf.d/default.conf
 heroku login
 heroku container:login
 
+# Build the image
 docker build -t autocompleter-heroku:latest -f ops/heroku/Dockerfile .
-
+# Tag it for Heroku registry
 docker tag autocompleter-heroku:latest registry.heroku.com/gyan42-autocompleter/web
-
+# Push it to Heroku registry
 docker push registry.heroku.com/gyan42-autocompleter/web
-
+# Release the app for public
 heroku container:release --app gyan42-autocompleter web
-
+# Check for logs
 heroku logs --app gyan42-autocompleter
 ```
 
