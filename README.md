@@ -1,6 +1,8 @@
 # autocomplete-ngram-model
 NLP Autocomplete N-Gram Model
 
+Medium Post: https://mageswaran1989.medium.com/nlp-what-it-takes-to-model-google-search-suggestions-or-auto-complete-8b94d3671d79
+
 [http://gyan42-autocompleter.herokuapp.com](http://gyan42-autocompleter.herokuapp.com)
 
 ![](screen.png)
