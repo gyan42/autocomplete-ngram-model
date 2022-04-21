@@ -2,7 +2,7 @@
  <page-header>
     <h1 class="title">Welcome to AutoCompleter! </h1>
     <h2 class="subtitle">Probability based model that suggests next word</h2>
-    <h3 class="text"> Git: <a href="https://github.com/gyan42/autocomplete-ngram-model">https://github.com/gyan42/autocomplete-ngram-model </a></h2>
+    Git: <a href="https://github.com/gyan42/autocomplete-ngram-model">https://github.com/gyan42/autocomplete-ngram-model </a>
  </page-header>
 
 
@@ -86,8 +86,6 @@ export default {
         this.results = res.data.tokens
         console.info("suggestions", this.results)
       })
-
-
       .catch((err) => console.error(err))
       this.isOpen = true
     },

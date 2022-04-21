@@ -9,7 +9,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 RUN npm install
 COPY ui/autocomplete/.env* /app/
 COPY ui/autocomplete/src /app/src
-ENV NODE_ENV "demo"
+ENV NODE_ENV "mac"
 RUN npm run build -- --mode $NODE_ENV
 
 # production stage

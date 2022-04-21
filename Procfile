@@ -1,0 +1,1 @@
+web: gunicorn  -b 0.0.0.0:5000 main:app --pythonpath 'api' -k uvicorn.workers.UvicornWorker --pythonpath 'api' --daemon

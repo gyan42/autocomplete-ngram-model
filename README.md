@@ -18,7 +18,6 @@ yarn serve --mode $NODE_ENV
 ## API
 
 ```
-cd ui/
 uvicorn main:app --host 0.0.0.0 --port 8088 --reload
 ```
 
