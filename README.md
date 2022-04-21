@@ -1,6 +1,15 @@
 # autocomplete-ngram-model
 NLP Autocomplete N-Gram Model
 
+Medium Post: https://mageswaran1989.medium.com/nlp-what-it-takes-to-model-google-search-suggestions-or-auto-complete-8b94d3671d79
+
+TODOs:
+- Try [Kneser Ney](https://medium.com/@dennyc/a-simple-numerical-example-for-kneser-ney-smoothing-nlp-4600addf38b8) smoothening instead of plain Laplace smoothening!
+
+Video Reference:
+- https://www.youtube.com/watch?v=Hr6UWRwAIEQ&list=PLaZQkZp6WhWyvdiP49JG-rjyTPck_hvEu&index=16
+
+
 [http://gyan42-autocompleter.herokuapp.com](http://gyan42-autocompleter.herokuapp.com)
 
 ![](screen.png)
